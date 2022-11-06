@@ -1,16 +1,16 @@
 const matchingStrings = (stringList, queries) => {
   let counts = []
-
-  stringList.forEach((string, i) =>{
-    counts[i] = 0
-    queries.forEach((query, i) => {
-      if(string === query){
+  queries.forEach((query, i) =>{
+    counts.push(0)
+    stringList.forEach((string) => {
+      if(query === string){
         counts[i] += 1
       }
     })
   })
   return counts
 }
+
 
 let list = ['ab', 'ab', 'abc']
 let queries = ['ab', 'abc', 'bc']
